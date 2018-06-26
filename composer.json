@@ -1,0 +1,22 @@
+{
+    "name": "leandrofreires/retorno-bradesco",
+    "description": "biblioteca para processamento de arquivo retorno bradesco 400 posicoes",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Leandro Freire",
+            "email": "leandro.freire.work@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leandrofreires\\RetornoBradesco\\": [
+                "src"
+            ]
+        }
+    }
+}
