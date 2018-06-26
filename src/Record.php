@@ -72,9 +72,15 @@ class Record {
     private $numeroSequencialRegistro;
 
 
-
+    /**
+     * Record constructor.
+     * @param $record
+     * @throws Exception
+     */
     public function __construct($record)
     {
+        if (strlen($record)!== 402)
+            throw new Exception('Arquivo de Retorno invalido');
         $this->idRegistro = substr($record,0,1);
 
         $this->tipoInscricaoEmpresa = substr($record,1,2);
@@ -420,6 +426,8 @@ class Record {
 
     function formataData($data) {
         $data =  substr($data, 0, 2) . "/" .substr($data, 2, 2) . "/".  substr($data, 4, 2);
+        if ($data == '00/00/00')
+            return $data;
         return date_create_from_format("d/m/y", $data);
     }
     function formataNumero($valor) {

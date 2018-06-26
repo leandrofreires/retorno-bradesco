@@ -113,7 +113,7 @@ class Header {
 
     public function __construct($header)
     {
-        if (strlen($header) !== 402)
+        if (strlen($header) !== 402 || (substr($header,2,7) !== "RETORNO"))
             throw new Exception('Arquivo de retorno possui um header fora dos padroes! Varificar Aruivo!');
         //print_r("Identificação do Registro: ".substr($header,0,1).PHP_EOL);
         $this->setIdRegistro(substr($header,0,1));

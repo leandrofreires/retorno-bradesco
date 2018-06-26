@@ -72,7 +72,8 @@ class ReturnFile {
     }
 
     /**
-     * @param mixed $record
+     * @param $record
+     * @throws Exception
      */
     public function setRecord($record)
     {
